@@ -6,6 +6,7 @@
 
 ## spark
 1. [输出文件到HDFS的方法.md](spark/输出文件到HDFS的方法.md)
+2. [runJob使用-1](spark/runJob使用.md)
 
 ## scala
 1. [IP地址转换](scala/IP地址转换.md)
