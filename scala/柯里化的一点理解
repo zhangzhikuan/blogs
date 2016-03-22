@@ -1,0 +1,40 @@
+假如有一个函数，此函数只有一个参数，此参数是输入Int，输出String的函数，如下：
+
+```
+    def f1(p: (Int) => String) {
+      println(p(5))
+    }
+
+    def p1(x: Int): String = {
+      (x + 10).toString
+    }
+    //执行函数
+    f1(p1)
+```
+
+此时另外一个函数的定义如下：
+
+```
+ def p2(x:Int,y:Int):String={
+      (x+y).toString
+    }
+```
+这种情况下，f1将无法调用p2，参数不匹配。但如果将p2改造一下呢？改造好的函数我们设成p3.
+
+```
+ def p3(x:Int)(y:Int):String={
+      (x+y).toString
+    }
+ f1(p3(10))
+```
+
+那么f1可以采用以下方式来调用p3函数.
+或者这么来写好理解
+
+```
+  val p4:Int=>String =  p3(10)
+    f1(p4)
+```
+
+我们可以利用柯里化的函数创造一个偏应用函数。
+
